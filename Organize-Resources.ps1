@@ -53,10 +53,19 @@ ForEach ($newFolder In $newFolders) {
 
 # Copy each resource for each language
 ForEach ($languageDir In $languageDirs) {
-	$result = $Host.UI.PromptForChoice("I'm going to process language " + $languageDir, "Continue?", $yesno, 0)
+	$targetLanguage = $languageDir
+	switch ($languageDir) 
+	{ 
+		"cz" { $targetLanguage = "cs" } 
+		"hk" { $targetLanguage = "zh-Hant" } 
+		"cn" { $targetLanguage = "zh-Hans" } 
+	}
+	Write-Host ("I'm going to process language " + $languageDir + $info) -ForegroundColor "Green"
+	if ($languageDir -ne $targetLanguage) { Write-Warning ("" + $languageDir + " will be renamed to " + $targetLanguage) }
+	$result = $Host.UI.PromptForChoice("", "Continue?", $yesno, 0)
 	if($result -eq 1) { Exit }
 	ForEach ($file In ($languageDir | Get-ChildItem)) {
-		$newFileDestination = $outputPath + "\" + ($file | % {$_.BaseName}) + "\" + ($file | % {$_.BaseName}) + "." + $languageDir + ".resx"
+		$newFileDestination = $outputPath + "\" + ($file | % {$_.BaseName}) + "\" + ($file | % {$_.BaseName}) + "." + $targetLanguage + ".resx"
 		"Copying '" + $file.FullName + "' to '" + $newFileDestination + "'"
 		Copy-Item $file.FullName -Destination $newFileDestination
 	}
