@@ -1,0 +1,16 @@
+1 - Run the PowerShell script: ./Prepare-Resources.ps1 -path [my resources directory] -outputPath [output directory]
+2 - Make sure there are no changed resources in the Workspace
+3 - Open project resources folder
+4 - Override project resources with new resources sent by Localisation team
+5 - Override project resources english files with partial resx sent to Localisation team
+6 - Open ResX Resource Manager and select only the resource files that you are working on
+7 - In the toolbar click Excel button (the green one with an X) and in the drop down menu select "Export selected"
+8 - Save it 
+9 - Open the accurev and Revert all changes
+10 - Go back to ResX Resource Manager and click Refresh
+11 - Click the Excel button and select import
+12 - Choose you Excel file and click Open
+
+This will automatically merge all new resource changes into the old files.
+Warning: This tool is not very reliable: check if the import produced the expected result and if needed repeat steps 11 and 12 until all resources have been totally imported.
+
