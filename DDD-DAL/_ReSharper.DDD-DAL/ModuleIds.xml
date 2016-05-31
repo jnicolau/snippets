@@ -1,7 +1,0 @@
-<Modules>
-  <Module PersistentId="8AFE253D-4EAE-4069-BAB5-EDA4FA5D4A69" ModuleId="DDD-DAL" />
-  <Module PersistentId="163DC608-C499-4B32-B1E5-8BE5C7639728" ModuleId="Domain" />
-  <Module PersistentId="E1E5D219-0337-4EEB-9C35-79F3F90996AA" ModuleId="Data" />
-  <Module PersistentId="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Core" />
-  <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib" />
-</Modules>
